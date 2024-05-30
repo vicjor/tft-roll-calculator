@@ -175,10 +175,11 @@ const TFTCalculator = () => {
             </Label>
             <Input
               max={CHAMPIONS_POOL[parseInt(tier)] * 13 ?? 22}
+              min={parseInt(unitsOut)}
               id="total-units-out"
               type="number"
               placeholder={`Total ${tier ? tier : "X"} cost units out`}
-              value={totalUnitsOut}
+              value={totalUnitsOut > unitsOut ? totalUnitsOut : unitsOut}
               onChange={(e) => setTotalUnitsOut(e.target.value)}
               className="mt-1"
             />
